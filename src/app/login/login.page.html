@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ingreso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="ion-padding">
+    <form [formGroup]="loginForm">
+
+      <ion-input type="mail" mode="md" label-placement="floating" fill="outline" label="Correo" formControlName="mail">
+      </ion-input>
+      <br>
+      <ion-input type="password" mode="md" label-placement="floating" fill="outline" label="Clave"
+        formControlName="password">
+      </ion-input>
+
+    </form>
+    <br>
+    <ion-button (click)="login()" expand="block" [disabled]="loginForm.invalid">Ingresar</ion-button>
+    <ion-text color="danger">{{error}}</ion-text>
+
+  </ion-card>
+
+</ion-content>
